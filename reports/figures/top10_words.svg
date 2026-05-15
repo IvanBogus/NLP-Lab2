@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="455" viewBox="0 0 920 455">
+  <style>
+    .title { font: 700 24px Arial, sans-serif; fill: #1f2937; }
+    .label { font: 15px Arial, sans-serif; fill: #374151; }
+    .value { font: 14px Arial, sans-serif; fill: #4b5563; }
+    .bar { fill: #3b82f6; }
+    .axis { stroke: #d1d5db; stroke-width: 1; }
+  </style>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="36" y="38" class="title">TOP-10 thematic words</text>
+  <line x1="170" y1="58" x2="170" y2="421" class="axis"/>
+  <text x="156" y="91" text-anchor="end" class="label">лідери</text><rect x="170" y="70" width="620" height="22" rx="3" class="bar"/><text x="800" y="87" class="value">5</text>
+<text x="156" y="125" text-anchor="end" class="label">єс</text><rect x="170" y="104" width="620" height="22" rx="3" class="bar"/><text x="800" y="121" class="value">5</text>
+<text x="156" y="159" text-anchor="end" class="label">україні</text><rect x="170" y="138" width="496" height="22" rx="3" class="bar"/><text x="676" y="155" class="value">4</text>
+<text x="156" y="193" text-anchor="end" class="label">ірану</text><rect x="170" y="172" width="496" height="22" rx="3" class="bar"/><text x="676" y="189" class="value">4</text>
+<text x="156" y="227" text-anchor="end" class="label">цін</text><rect x="170" y="206" width="372" height="22" rx="3" class="bar"/><text x="552" y="223" class="value">3</text>
+<text x="156" y="261" text-anchor="end" class="label">криму</text><rect x="170" y="240" width="372" height="22" rx="3" class="bar"/><text x="552" y="257" class="value">3</text>
+<text x="156" y="295" text-anchor="end" class="label">назвав</text><rect x="170" y="274" width="372" height="22" rx="3" class="bar"/><text x="552" y="291" class="value">3</text>
+<text x="156" y="329" text-anchor="end" class="label">млрд</text><rect x="170" y="308" width="372" height="22" rx="3" class="bar"/><text x="552" y="325" class="value">3</text>
+<text x="156" y="363" text-anchor="end" class="label">україни</text><rect x="170" y="342" width="372" height="22" rx="3" class="bar"/><text x="552" y="359" class="value">3</text>
+<text x="156" y="397" text-anchor="end" class="label">обмеження</text><rect x="170" y="376" width="372" height="22" rx="3" class="bar"/><text x="552" y="393" class="value">3</text>
+</svg>
