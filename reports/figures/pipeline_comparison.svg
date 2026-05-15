@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="520" viewBox="0 0 1080 520">
+  <style>
+    .title { font: 700 24px Arial, sans-serif; fill: #1f2937; }
+    .label { font: 14px Arial, sans-serif; fill: #374151; }
+    .value { font: 12px Arial, sans-serif; fill: #4b5563; }
+    .legend { font: 13px Arial, sans-serif; fill: #374151; }
+    .axis { stroke: #d1d5db; stroke-width: 1; }
+  </style>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="36" y="38" class="title">Pipeline comparison</text>
+  <rect x="680" y="22" width="14" height="10" fill="#2563eb"/><text x="700" y="32" class="legend">tokens</text>
+  <rect x="770" y="22" width="14" height="10" fill="#16a34a"/><text x="790" y="32" class="legend">unique</text>
+  <rect x="860" y="22" width="14" height="10" fill="#f97316"/><text x="880" y="32" class="legend">without stop words</text>
+  <line x1="190" y1="54" x2="190" y2="465" class="axis"/>
+  <text x="172" y="92" text-anchor="end" class="label">stdlib regex</text>
+<rect x="190" y="70" width="760" height="12" rx="2" fill="#2563eb"/><text x="958" y="80" class="value">471</text>
+<rect x="190" y="87" width="450" height="12" rx="2" fill="#16a34a"/><text x="648" y="97" class="value">279</text>
+<rect x="190" y="104" width="569" height="12" rx="2" fill="#f97316"/><text x="767" y="114" class="value">353</text>
+<text x="172" y="154" text-anchor="end" class="label">stdlib split</text>
+<rect x="190" y="132" width="760" height="12" rx="2" fill="#2563eb"/><text x="958" y="142" class="value">471</text>
+<rect x="190" y="149" width="450" height="12" rx="2" fill="#16a34a"/><text x="648" y="159" class="value">279</text>
+<rect x="190" y="166" width="569" height="12" rx="2" fill="#f97316"/><text x="767" y="176" class="value">353</text>
+<text x="172" y="216" text-anchor="end" class="label">stdlib translate table</text>
+<rect x="190" y="194" width="760" height="12" rx="2" fill="#2563eb"/><text x="958" y="204" class="value">471</text>
+<rect x="190" y="211" width="450" height="12" rx="2" fill="#16a34a"/><text x="648" y="221" class="value">279</text>
+<rect x="190" y="228" width="569" height="12" rx="2" fill="#f97316"/><text x="767" y="238" class="value">353</text>
+<text x="172" y="278" text-anchor="end" class="label">stdlib sentence regex</text>
+<rect x="190" y="256" width="64" height="12" rx="2" fill="#2563eb"/><text x="262" y="266" class="value">40</text>
+<rect x="190" y="273" width="59" height="12" rx="2" fill="#16a34a"/><text x="257" y="283" class="value">37</text>
+<rect x="190" y="290" width="64" height="12" rx="2" fill="#f97316"/><text x="262" y="300" class="value">40</text>
+<text x="172" y="340" text-anchor="end" class="label">NLTK wordpunct</text>
+<rect x="190" y="318" width="760" height="12" rx="2" fill="#2563eb"/><text x="958" y="328" class="value">471</text>
+<rect x="190" y="335" width="450" height="12" rx="2" fill="#16a34a"/><text x="648" y="345" class="value">279</text>
+<rect x="190" y="352" width="569" height="12" rx="2" fill="#f97316"/><text x="767" y="362" class="value">353</text>
+<text x="172" y="402" text-anchor="end" class="label">spaCy uk_core_news_sm</text>
+<rect x="190" y="380" width="760" height="12" rx="2" fill="#2563eb"/><text x="958" y="390" class="value">471</text>
+<rect x="190" y="397" width="450" height="12" rx="2" fill="#16a34a"/><text x="648" y="407" class="value">279</text>
+<rect x="190" y="414" width="571" height="12" rx="2" fill="#f97316"/><text x="769" y="424" class="value">354</text>
+</svg>

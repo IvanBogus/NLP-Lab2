@@ -1,0 +1,7 @@
+﻿method,available,elapsed_ms,token_count,unique_count,without_stop_count
+stdlib regex,True,0.312,471,279,353
+stdlib split,True,0.209,471,279,353
+stdlib translate table,True,0.607,471,279,353
+stdlib sentence regex,True,0,40,37,40
+NLTK wordpunct,True,2425.953,471,279,353
+spaCy uk_core_news_sm,True,6176.709,471,279,354

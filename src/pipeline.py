@@ -217,6 +217,68 @@ def save_top_words_svg(path: Path, title: str, items: list[tuple[str, int]]) -> 
     path.write_text(svg, encoding="utf-8")
 
 
+def save_pipeline_comparison_csv(path: Path, results: list[PipelineResult]) -> None:
+    with path.open("w", encoding="utf-8-sig", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(["method", "available", "elapsed_ms", "token_count", "unique_count", "without_stop_count"])
+        for result in results:
+            writer.writerow([
+                result.name,
+                result.available,
+                result.elapsed_ms,
+                result.token_count,
+                result.unique_count,
+                result.without_stop_count,
+            ])
+
+
+def save_pipeline_comparison_svg(path: Path, results: list[PipelineResult]) -> None:
+    available_results = [result for result in results if result.available]
+    width = 1080
+    height = 520
+    margin_left = 190
+    margin_top = 70
+    chart_width = 760
+    group_height = 62
+    bar_height = 12
+    max_count = max((result.token_count for result in available_results), default=1)
+    colors = {
+        "token_count": "#2563eb",
+        "unique_count": "#16a34a",
+        "without_stop_count": "#f97316",
+    }
+    rows = []
+    for index, result in enumerate(available_results):
+        y = margin_top + index * group_height
+        rows.append(f'<text x="{margin_left - 18}" y="{y + 22}" text-anchor="end" class="label">{html.escape(result.name)}</text>')
+        for offset, key in enumerate(("token_count", "unique_count", "without_stop_count")):
+            value = getattr(result, key)
+            bar_width = int((value / max_count) * chart_width)
+            bar_y = y + offset * (bar_height + 5)
+            rows.append(
+                f'<rect x="{margin_left}" y="{bar_y}" width="{bar_width}" height="{bar_height}" rx="2" fill="{colors[key]}"/>'
+                f'<text x="{margin_left + bar_width + 8}" y="{bar_y + 10}" class="value">{value}</text>'
+            )
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
+  <style>
+    .title {{ font: 700 24px Arial, sans-serif; fill: #1f2937; }}
+    .label {{ font: 14px Arial, sans-serif; fill: #374151; }}
+    .value {{ font: 12px Arial, sans-serif; fill: #4b5563; }}
+    .legend {{ font: 13px Arial, sans-serif; fill: #374151; }}
+    .axis {{ stroke: #d1d5db; stroke-width: 1; }}
+  </style>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="36" y="38" class="title">Pipeline comparison</text>
+  <rect x="680" y="22" width="14" height="10" fill="{colors['token_count']}"/><text x="700" y="32" class="legend">tokens</text>
+  <rect x="770" y="22" width="14" height="10" fill="{colors['unique_count']}"/><text x="790" y="32" class="legend">unique</text>
+  <rect x="860" y="22" width="14" height="10" fill="{colors['without_stop_count']}"/><text x="880" y="32" class="legend">without stop words</text>
+  <line x1="{margin_left}" y1="{margin_top - 16}" x2="{margin_left}" y2="{height - 55}" class="axis"/>
+  {chr(10).join(rows)}
+</svg>
+"""
+    path.write_text(svg, encoding="utf-8")
+
+
 def run_stdlib_pipeline(name: str, text: str, tokenizer, note: str) -> PipelineResult:
     started = time.perf_counter()
     tokens = tokenizer(text)
@@ -458,6 +520,8 @@ def main() -> None:
         json.dumps([asdict(result) for result in pipeline_results], ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+    save_pipeline_comparison_csv(metrics_dir / "09_pipeline_comparison.csv", pipeline_results)
+    save_pipeline_comparison_svg(figures_dir / "pipeline_comparison.svg", pipeline_results)
 
     write_report(
         reports_dir,

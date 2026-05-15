@@ -2,7 +2,7 @@
   {
     "name": "stdlib regex",
     "available": true,
-    "elapsed_ms": 0.259,
+    "elapsed_ms": 0.312,
     "token_count": 471,
     "unique_count": 279,
     "without_stop_count": 353,
@@ -53,7 +53,7 @@
   {
     "name": "stdlib split",
     "available": true,
-    "elapsed_ms": 0.194,
+    "elapsed_ms": 0.209,
     "token_count": 471,
     "unique_count": 279,
     "without_stop_count": 353,
@@ -104,7 +104,7 @@
   {
     "name": "stdlib translate table",
     "available": true,
-    "elapsed_ms": 0.592,
+    "elapsed_ms": 0.607,
     "token_count": 471,
     "unique_count": 279,
     "without_stop_count": 353,
@@ -165,7 +165,7 @@
   {
     "name": "NLTK wordpunct",
     "available": true,
-    "elapsed_ms": 2173.089,
+    "elapsed_ms": 2425.953,
     "token_count": 471,
     "unique_count": 279,
     "without_stop_count": 353,
@@ -216,7 +216,7 @@
   {
     "name": "spaCy uk_core_news_sm",
     "available": true,
-    "elapsed_ms": 5449.896,
+    "elapsed_ms": 6176.709,
     "token_count": 471,
     "unique_count": 279,
     "without_stop_count": 354,
